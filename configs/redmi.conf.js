@@ -1,5 +1,5 @@
 exports.config = {
-  user: process.env.BROWSERSTACK_USER,
+  user: process.env.BROWSERSTACK_USER, 
   key: process.env.BROWSERSTACK_KEY,
 
   updateJob: false,
