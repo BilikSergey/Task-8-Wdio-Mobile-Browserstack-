@@ -24,14 +24,11 @@ jobs:
       - name: Clean old Allure results
         run: rm -rf allure-results allure-report
 
-      - name: Download APK from Google Drive
+      - name: Download APK from Dropbox
         run: |
-          file_id="1Gp25J31WdlNwEWV6Kq68HRYZlVA1_3Mj"
+          file_url="https://www.dropbox.com/scl/fi/tlyh1lfaz0dgo4t0jrmgd/Android-NativeDemoApp-0.4.0.apk?rlkey=g6saust1jj9pi62ed1trzp2de&st=36shp57i&dl=1"
           file_name="app.apk"
-          curl -c /tmp/cookies "https://drive.google.com/uc?export=download&id=${file_id}" -s \
-            | grep -oP '(confirm=[a-zA-Z0-9\-_]+)' \
-            | head -n 1 \
-            | xargs -I {} curl -Lb /tmp/cookies "https://drive.google.com/uc?export=download&{}&id=${file_id}" -o ${file_name}
+          curl -L -o ${file_name} "${file_url}"
 
       - name: Upload APK to BrowserStack and get app_url
         id: upload_apk
