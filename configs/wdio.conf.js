@@ -1,6 +1,6 @@
 exports.config = {
-  user: process.env.BROWSERSTACK_USER, 
-  key: process.env.BROWSERSTACK_KEY,
+  user: process.env.BROWSERSTACK_USERNAME, 
+  key: process.env.BROWSERSTACK_ACCESS_KEY,
 
   updateJob: false,
   specs: ["../test/specs/**.e2e.js"],
