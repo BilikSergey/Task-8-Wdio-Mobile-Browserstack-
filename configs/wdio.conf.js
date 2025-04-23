@@ -13,7 +13,7 @@ exports.config = {
       name: "first_test",
       device: "Google Pixel 3",
       os_version: "9.0",
-      app: "android_demo_app",
+      app: "process.env.APP_URL",
       "browserstack.debug": true,
     },
   ],
