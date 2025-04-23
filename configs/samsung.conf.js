@@ -1,6 +1,6 @@
 exports.config = {
-  user: "user.game17@gmail.com",
-  key: "Xz5p6Mt2LQTati8tfp9X",
+  user: process.env.BROWSERSTACK_USER,
+  key: process.env.BROWSERSTACK_KEY,
 
   updateJob: false,
   specs: ["../test/specs/**.e2e.js"],
