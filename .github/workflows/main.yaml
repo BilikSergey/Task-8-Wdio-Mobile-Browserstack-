@@ -24,8 +24,11 @@ jobs:
       - name: Clean old Allure results
         run: rm -rf allure-results allure-report
 
-      - name: Download APK
-        run: curl -L -o app.apk "https://drive.google.com/uc?export=download&id=1Gp25J31WdlNwEWV6Kq68HRYZlVA1_3Mj" || exit 1
+      - name: Download APK from Google Drive
+        run: |
+          file_id="1Gp25J31WdlNwEWV6Kq68HRYZlVA1_3Mj"
+          file_name="app.apk"
+          wget --no-check-certificate "https://drive.google.com/uc?export=download&id=${file_id}" -O ${file_name}
 
       - name: Upload APK to BrowserStack and get app_url
         id: upload_apk
