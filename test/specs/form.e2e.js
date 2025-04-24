@@ -4,7 +4,7 @@ import mainPage from "../pageObjects/main.page.js";
 import testData from "../../data/testData.json";
 
 describe("Mobile Form Test", () => {
-  it("fill form", async () => {
+  it("Fill Form", async () => {
     await formPage.clickFormButton();
     await formPage.fillTheForm(testData.typedInput);
     await mainPage.successfulMessage.waitForDisplayed({ timeout: 5000 });

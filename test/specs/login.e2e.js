@@ -4,7 +4,7 @@ import loginPage from "../pageObjects/login.page.js";
 import mainPage from "../pageObjects/main.page.js";
 
 describe("Mobile Login Tests", () => {
-  it("correct sign up", async () => {
+  it("Correct Sign Up", async () => {
     await loginPage.clickLoginPageButton();
     await loginPage.signUpButton.click();
     let password = faker.internet.password();
@@ -18,7 +18,7 @@ describe("Mobile Login Tests", () => {
     expect(await mainPage.okButton.isDisplayed()).toBe(true);
   });
 
-  it("correct login", async () => {
+  it("Correct Login", async () => {
     await mainPage.clickOkButton();
     await loginPage.clickLoginContainerButton();
     await loginPage.clickSubmitLoginButton();
@@ -27,7 +27,7 @@ describe("Mobile Login Tests", () => {
     expect(await mainPage.okButton.isDisplayed()).toBe(true);
   });
 
-  it("incorrect login", async () => {
+  it("Incorrect Login", async () => {
     await mainPage.clickOkButton();
     await loginPage.enterSignUpData({
       email: "",
